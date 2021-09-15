@@ -1,26 +1,28 @@
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 91px;
-  padding: 0 calc(50% - 700px);
-  background-color: rgb(71, 49, 49);
-  margin-bottom: 50px;
+.tabs {
+  width: 100%;
+  margin: 90px 20px 0;
 }
 
-.enter,
-.load {
-  font-size: 24px;
-  font-weight: 400;
-  padding: 10px;
-  padding-left: 20px;
-  color: rgba(250, 250, 250, 0.8);
-  background-color: inherit;
-  border: none;
-  
+.list {
+  display: flex;
+}
+
+.item {
+  width: 195px;
+  font-size: 20px;
+  padding-top: 11px;
+  padding-bottom: 14px;
+  border: 1px solid #D7D9DF;
+  text-align: center;
+  cursor: pointer;
+
   &:hover {
-    color: rgba(74, 190, 118, 0.692);
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    border: 1px solid #D12136;
   }
+}
+
+.itemActive {
+  background-color: #D12136;
+  color: #FFFFFF;
+  border: 1px solid #D12136;
 }
