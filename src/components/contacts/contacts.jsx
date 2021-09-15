@@ -25,7 +25,7 @@ function Contacts() {
           info@avto-moto.ru
         </dd>
       </dl>
-      <div class={styles.map}>
+      <div className={styles.map}>
         <Iframe 
           title="Karpovka district"
           className={styles.mapImage}
