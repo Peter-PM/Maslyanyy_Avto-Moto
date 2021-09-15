@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 84px;
+  padding: 0 calc(50% - 585px);
+  background-color: #F5F5F9;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 20px;
+}
+
+.item {
+  font-size: 16px;
+  font-weight: 600;
+  color: #48494D;
+  padding-left: 68px;
+}

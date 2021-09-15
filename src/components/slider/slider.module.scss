@@ -1,0 +1,37 @@
+.slider {
+  margin-left: 20px;
+  margin-top: 90px;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.mainImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 434px;
+}
+
+.button {
+  padding: 16px 15px;
+  border: 1px solid #D7D9DF;
+  border-radius: 50%;
+}
+
+.buttonLeft {
+  transform: rotate(180deg);
+  margin-right: 31px;
+}
+
+.buttonRight {
+  margin-left: 31px;
+}
