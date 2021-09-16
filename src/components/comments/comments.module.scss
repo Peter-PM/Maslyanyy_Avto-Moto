@@ -1,5 +1,106 @@
-.main {
+.comments {
+  position: relative;
+  margin-top: 10px;
+}
+
+.comment {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.user {
+  font-size: 20px;
+  font-weight: 600;
+  color: #48494D;
+}
+
+.list {
+  padding-top: 13px;
+  font-size: 15px;
+  color: #000000;
+}
+
+.term {
+  position: relative;
+  padding-bottom: 4px;
+  font-weight: 600;
+
+  &:first-child {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background: url('../../image/plus.svg') no-repeat;
+      top: 5px;
+      left: 0;
+    }
+  }
+
+  &:nth-of-type(2) {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background: url('../../image/minus.svg') no-repeat;
+      top: 7px;
+      left: 0;
+    }
+  }
+}
+
+.item {
+  padding-bottom: 13px;
+}
+
+.decoration {
+  padding-left: 18px;
+}
+
+.assessment {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 calc(50% - 585px);
+  padding-top: 10px;
+}
+
+.recommendation {
+  padding-left: 17px;
+  font-size: 15px;
+  color: #D12136;
+}
+
+.feedback {
+  padding-top: 25px;
+}
+
+.time {
+  padding-right: 26px;
+  font-size: 14px;
+  color: #000000;
+  opacity: 0.4;
+}
+
+.reply {
+  font-size: 16px;
+  color: #D12136;
+}
+
+.review {
+  position: absolute;
+  right: 0;
+  padding: 17px 18px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #D12136;
+  border: 1px solid #D12136;
+
+  &:hover {
+    background-color: #D12136;
+    color: #FFFFFF;
+    transition: 0.2s;
+  }
 }

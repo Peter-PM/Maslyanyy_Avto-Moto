@@ -1,28 +1,54 @@
 import React from 'react';
 import styles from './comments.module.scss';
+import Stars from '../stars/stars';
+
+const RATING_STARS = 3;
 
 function Comments() {
   return (
-    <section>
-      <article>
-        <dl>
-          <dt>Достоинства</dt>
-          <dd>мощность, внешний вид</dd>
-          <dt>Недостатки</dt>
-          <dd>Слабые тормозные колодки (пришлось заменить)</dd>
-          <dt>Комментарий</dt>
-          <dd>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
+    <section className={styles.comments}>
+      <button className={styles.review} type="button">Оставить отзыв</button>
+      <article className={styles.comment}>
+        <p className={styles.user}>Борис Иванов</p>
+        <dl className={styles.list}>
+          <dt className={`${styles.term} ${styles.decoration}`}>Достоинства</dt>
+          <dd className={`${styles.item} ${styles.decoration}`}>мощность, внешний вид</dd>
+          <dt className={`${styles.term} ${styles.decoration}`}>Недостатки</dt>
+          <dd className={`${styles.item} ${styles.decoration}`}>Слабые тормозные колодки (пришлось заменить)</dd>
+          <dt className={styles.term}>Комментарий</dt>
+          <dd className={styles.item}>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
         </dl>
+        <div className={styles.assessment}>
+          <Stars
+          star={RATING_STARS}
+          />
+          <span className={styles.recommendation}>Советует</span>
+        </div>
+        <div className={styles.feedback}>
+          <span className={styles.time}>1 минуту назад</span>
+          <a href="#" className={styles.reply}>Ответить</a>
+        </div>
       </article>
-      <article>
-        <dl>
-          <dt>Достоинства</dt>
-          <dd>Cтиль, комфорт, управляемость</dd>
-          <dt>Недостатки</dt>
-          <dd> Дорогой ремонт и обслуживание</dd>
-          <dt>Комментарий</dt>
-          <dd>Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.</dd>
+      <article className={styles.comment}>
+        <p className={styles.user}>Марсель Исмагилов</p>
+        <dl className={styles.list}>
+          <dt className={`${styles.term} ${styles.decoration}`}>Достоинства</dt>
+          <dd className={`${styles.item} ${styles.decoration}`}>Cтиль, комфорт, управляемость</dd>
+          <dt className={`${styles.term} ${styles.decoration}`}>Недостатки</dt>
+          <dd className={`${styles.item} ${styles.decoration}`}>Дорогой ремонт и обслуживание</dd>
+          <dt className={styles.term}>Комментарий</dt>
+          <dd className={styles.item}>Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.</dd>
         </dl>
+        <div className={styles.assessment}>
+          <Stars
+          star={RATING_STARS}
+          />
+          <span className={styles.recommendation}>Советует</span>
+        </div>
+        <div className={styles.feedback}>
+          <span className={styles.time}>1 минуту назад</span>
+          <a href="#" className={styles.reply}>Ответить</a>
+        </div>
       </article>
     </section>
   );

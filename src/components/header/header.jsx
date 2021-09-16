@@ -9,10 +9,10 @@ function Header() {
       <Logo/>
       <nav>
         <ul className={styles.list}>
-          <li className={styles.item}>Автомобили</li>
-          <li className={styles.item}>Контакты</li>
-          <li className={styles.item}>Услуги</li>
-          <li className={styles.item}>Вакансии</li>
+          <li className={styles.item}><a href="#">Автомобили</a></li>
+          <li className={styles.item}><a href="#">Контакты</a></li>
+          <li className={styles.item}><a href="#">Услуги</a></li>
+          <li className={styles.item}><a href="#">Вакансии</a></li>
         </ul>
       </nav>
       

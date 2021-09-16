@@ -6,13 +6,13 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <ul className={styles.list}>
-        <li className={styles.item}>Корпоративным клиентам</li>
-        <li className={styles.item}>Клиентам</li>
-        <li className={styles.item}>Аренда авто</li>
-        <li className={styles.item}>Каршеринг</li>
-        <li className={styles.item}>Как продать авто</li>
-        <li className={styles.item}>trade-in</li>
-        <li className={styles.item}>test drive</li>
+        <li className={styles.item}><a href="#">Корпоративным клиентам</a></li>
+        <li className={styles.item}><a href="#">Клиентам</a></li>
+        <li className={styles.item}><a href="#">Аренда авто</a></li>
+        <li className={styles.item}><a href="#">Каршерин</a>г</li>
+        <li className={styles.item}><a href="#">Как продать авто</a></li>
+        <li className={styles.item}><a href="#">trade-in</a></li>
+        <li className={styles.item}><a href="#">test drive</a></li>
       </ul>
     </footer>
   );

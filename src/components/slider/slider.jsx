@@ -21,7 +21,7 @@ function Slider() {
           className={`${styles.button} ${styles.buttonLeft}`}
           onClick={() => {setCount(count-1)}}
           disabled={count === FIRST_FOTO ? true : false }>
-          <img src={count === FIRST_FOTO ? arrowOff : arrow } alt="Стрелочка влево"/>
+          <img src={count === FIRST_FOTO ? arrowOff : arrow } width="20" height="13" alt="Стрелочка влево"/>
         </button>
         <ul className={styles.images}>
           <li>
@@ -39,7 +39,7 @@ function Slider() {
           className={`${styles.button} ${styles.buttonRight}`}
           onClick={() => {setCount(count+1)}}
           disabled={count === LAST_FOTO ? true : false }>
-          <img src={count === LAST_FOTO ? arrowOff : arrow } alt="Стрелочка вправо"/>
+          <img src={count === LAST_FOTO ? arrowOff : arrow } width="20" height="13" alt="Стрелочка вправо"/>
         </button>
       </div>
     </section>
