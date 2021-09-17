@@ -4,10 +4,16 @@ import Stars from '../stars/stars';
 
 const RATING_STARS = 3;
 
-function Comments() {
+function Comments({setView}) {
   return (
     <section className={styles.comments}>
-      <button className={styles.review} type="button">Оставить отзыв</button>
+      <button
+        className={styles.review}
+        type="button"
+        onClick={()=>{setView(true)}}
+      >
+        Оставить отзыв
+      </button>
       <article className={styles.comment}>
         <p className={styles.user}>Борис Иванов</p>
         <dl className={styles.list}>

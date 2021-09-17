@@ -19,6 +19,7 @@ function RatingStar() {
         <label
           className={styles.label}
           htmlFor={`star-${item}`}
+          tabIndex="0"
         >
           Rating {item}
         </label>

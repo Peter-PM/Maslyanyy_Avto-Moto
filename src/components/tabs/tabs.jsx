@@ -10,18 +10,18 @@ const Tab = {
   CONTACTS: 'Contacts',
 };
 
-const renderTab = (tab) => {
-  switch (tab) {
-    case Tab.REVIEWS:
-      return <Comments/>;
-    case Tab.CONTACTS:
-      return <Contacts/>;
-    default:
-      return <Details/>;
-  }
-}
+function Tabs({setView}) {
 
-function Tabs() {
+  const renderTab = (tab) => {
+    switch (tab) {
+      case Tab.REVIEWS:
+        return <Comments setView={setView}/>;
+      case Tab.CONTACTS:
+        return <Contacts/>;
+      default:
+        return <Details/>;
+    }
+  }
 
   const [activeTab, setActiveTab] = useState(Tab.DETAILS);
   

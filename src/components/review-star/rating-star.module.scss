@@ -1,6 +1,8 @@
 .list {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
+  min-width: 168px;
 }
 
 .input {
@@ -14,7 +16,7 @@
   font-size: 0;
   line-height: 0;
   display: block;
-  padding-right: 8px;
+  // padding-right: 8px;
   cursor: pointer;
 
   &:first-child {

@@ -3,15 +3,15 @@ import styles from './main.module.scss';
 import Slider from '../slider/slider';
 import Info from '../info/info';
 import Tabs from '../tabs/tabs';
-import Popup from '../popup/popup';
 
-function Main() {
+function Main({setView}) {
   return (
     <main className={styles.main}>
       <Slider/>
       <Info/>
-      <Tabs/>
-      <Popup/>
+      <Tabs
+        setView={setView}
+      />
     </main>
   );
 }
