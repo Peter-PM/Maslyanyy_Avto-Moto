@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import styles from './slider.module.scss';
 import arrow from '../../image/arrow.svg'
 import arrowOff from '../../image/arrow-off.svg'
+import { FIRST_FOTO, LAST_FOTO } from '../../utils/constants';
 
-const FIRST_FOTO = 1;
-const LAST_FOTO = 3;
 
 function Slider() {
 

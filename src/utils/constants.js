@@ -9,3 +9,7 @@ export const clickEsc = (evt) => {
   return evt.key === (KeyCode.ESCAPE || KeyCode.ESC);
 };
 
+export const FIRST_FOTO = 1;
+export const LAST_FOTO = 3;
+
+export const STARS = [5,4,3,2,1];

@@ -1,20 +1,21 @@
 import React, { Fragment } from 'react';
 import styles from './rating-star.module.scss';
+import { STARS } from '../../utils/constants';
 
-function RatingStar() {
-
-  const stars = [5,4,3,2,1];
+function RatingStar({rating, setRating}) {
 
   return (
     <ul className={styles.list}>
-    {stars.map((item) => (
+    {STARS.map((item) => (
       <Fragment key={item}>
         <input
           className={styles.input}
           id={`star-${item}`}
-          type="radio"
+          type="checkbox"
           name="rating"
           value={item}
+          checked={+item === +rating ? true : false}
+          onChange={(evt) => setRating(evt.target.value)}
         />
         <label
           className={styles.label}

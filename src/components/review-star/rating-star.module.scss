@@ -8,20 +8,16 @@
 .input {
   display: none;
 }
+
 .input:checked ~ .label::after {
-  color: #D22D40;
+  color: #D12136;
 }
 
 .label {
   font-size: 0;
   line-height: 0;
   display: block;
-  // padding-right: 8px;
   cursor: pointer;
-
-  &:first-child {
-    padding-right: 0;
-  }
 
   &::after {
     content: '★';
@@ -31,5 +27,9 @@
     color: rgba(189, 190, 194, 0.7);
     -webkit-transition: color 0.2s;
     transition: color 0.2s;
+  }
+
+  &:hover::after {
+    color: #D12136;
   }
 }
