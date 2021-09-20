@@ -26,17 +26,34 @@ function Popup({viewPopup, setView}) {
     rating: rating,
   };
   
-  const validationName = () => name.lenght ? setNameValid(true) : setNameValid(false);
-  const validationComment = () => comment.lenght ? setCommentValid(true) : setCommentValid(false);
+  const validationName = (text) => text.length !== 0 ? setNameValid(true) : setNameValid(false);
+  const validationComment = (text) => text.length !== 0 ? setCommentValid(true) : setCommentValid(false);
+
+  const handleNameChange = (evt) => {
+    evt.preventDefault();
+    validationName(evt.target.value);
+    setName(evt.target.value)
+  }
+
+  const handleCommentChange = (evt) => {
+    evt.preventDefault();
+    validationComment(evt.target.value);
+    setComment(evt.target.value);
+  }
 
   const hadlePublishComment = () => {
-    setView(false);
-    setName('');
-    setAdvantages('');
-    setLimitations('');
-    setComment('');
-    setRating('');
-    localStorage.commentDraft = JSON.stringify(commentary);
+    if (name.length && comment.length) {
+      setView(false);
+      setName('');
+      setAdvantages('');
+      setLimitations('');
+      setComment('');
+      setRating('');
+      localStorage.commentDraft = JSON.stringify(commentary);
+    } else {
+      validationName(name);
+      validationComment(comment);
+    }
   };
 
   const handleClosePopup = () => {
@@ -105,7 +122,7 @@ function Popup({viewPopup, setView}) {
                   placeholder="Имя"
                   autoFocus
                   value={name}
-                  onChange={(evt) => setName(evt.target.value)}
+                  onChange={(evt) => {handleNameChange(evt)}}
                 />
 
                 <div className={styles.grade}>
@@ -149,7 +166,7 @@ function Popup({viewPopup, setView}) {
                   id="review"
                   placeholder="Комментарий"
                   value={comment}
-                  onChange={(evt) => setComment(evt.target.value)}
+                  onChange={(evt) => {handleCommentChange(evt)}}
                 ></textarea>
 
                 <button

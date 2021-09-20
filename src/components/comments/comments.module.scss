@@ -25,6 +25,7 @@
   position: relative;
   padding-bottom: 4px;
   font-weight: 600;
+  max-width: 50%;
 
   &:first-child {
     &::before {
@@ -97,7 +98,6 @@
   letter-spacing: 2px;
   color: #D12136;
   border: 1px solid #D12136;
-  z-index: 2;
 
   &:hover {
     background-color: #D12136;

@@ -32,7 +32,7 @@ function Contacts() {
           width="431"
           height="271"
           allowfullscreen="fullscreen"
-          // loading="lazy"
+          loading="lazy"
         />
       </div>
     </section>
