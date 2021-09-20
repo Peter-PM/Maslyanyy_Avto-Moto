@@ -23,3 +23,17 @@
 .mapImage {
   border: none;
 }
+
+.map {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 33px;
+    height: 40px;
+    top: 85px;
+    left: 135px;
+    background: url('../../image/pin.svg') no-repeat;
+  }
+}

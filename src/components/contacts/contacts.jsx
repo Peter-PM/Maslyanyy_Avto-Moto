@@ -28,7 +28,7 @@ function Contacts() {
         <Iframe 
           title="Karpovka district"
           className={styles.mapImage}
-          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3358.177490260779!2d30.322492759256807!3d59.96890170757109!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1631747799491!5m2!1sru!2sru"
+          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3993.677443548458!2d30.322857708589304!3d59.967998703054626!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1632166851421!5m2!1sru!2sru"
           width="431"
           height="271"
           allowfullscreen="fullscreen"
