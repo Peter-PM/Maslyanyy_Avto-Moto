@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import dayjs from 'dayjs';
 import styles from './popup.module.scss';
 import RatingStar from '../review-star/rating-star';
 import { clickEsc } from '../../utils/constants';
 const FocusTrap = require('focus-trap-react');
 
 
-function Popup({viewPopup, setView}) {
+function Popup({viewPopup, setView, setNewCommentary}) {
 
   const storageComment = localStorage.commentDraft ? JSON.parse(localStorage.commentDraft) : false ;
 
@@ -17,13 +18,13 @@ function Popup({viewPopup, setView}) {
   const [nameValid, setNameValid] = useState(true);
   const [commentValid, setCommentValid] = useState(true);
 
-
   const commentary = {
     name: name,
     advantages: advantages,
     limitations: limitations,
     comment: comment,
     rating: rating,
+    date: dayjs().format('HH:MM DD mmmm'),
   };
   
   const validationName = (text) => text.length !== 0 ? setNameValid(true) : setNameValid(false);
@@ -41,19 +42,25 @@ function Popup({viewPopup, setView}) {
     setComment(evt.target.value);
   }
 
+  const saveComment = async () => {
+    localStorage.commentDraft = JSON.stringify(commentary);
+    await setNewCommentary(commentary);
+    localStorage.removeItem('commentDraft');
+  }
+
   const hadlePublishComment = () => {
     if (name.length && comment.length) {
+      saveComment();
       setView(false);
       setName('');
       setAdvantages('');
       setLimitations('');
       setComment('');
       setRating('');
-      localStorage.commentDraft = JSON.stringify(commentary);
     } else {
       validationName(name);
       validationComment(comment);
-    }
+    };
   };
 
   const handleClosePopup = () => {
@@ -78,8 +85,6 @@ function Popup({viewPopup, setView}) {
     document.querySelector('body').style.overflow = viewPopup ? "hidden" : "visible" ;
   }, [viewPopup]);
 
-
-  console.log(localStorage.commentDraft)
   return (
     <>
       {viewPopup ? (

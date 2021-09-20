@@ -10,12 +10,15 @@ const Tab = {
   CONTACTS: 'Contacts',
 };
 
-function Tabs({setView}) {
+function Tabs({setView, newCommentary}) {
 
   const renderTab = (tab) => {
     switch (tab) {
       case Tab.REVIEWS:
-        return <Comments setView={setView}/>;
+        return <Comments 
+                setView={setView}
+                newCommentary={newCommentary}
+              />;
       case Tab.CONTACTS:
         return <Contacts/>;
       default:

@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './comments.module.scss';
 import Stars from '../stars/stars';
+import AddComment from '../add-comment/add-comment';
 
 const RATING_STARS = 3;
 
-function Comments({setView}) {
+function Comments({setView, newCommentary}) {
+  newCommentary.name ? console.log(newCommentary): console.log('no comments') ;
   return (
     <section className={styles.comments}>
       <button
@@ -17,9 +19,9 @@ function Comments({setView}) {
       <article className={styles.comment}>
         <p className={styles.user}>Борис Иванов</p>
         <dl className={styles.list}>
-          <dt className={`${styles.term} ${styles.decoration}`}>Достоинства</dt>
+          <dt className={`${styles.term} ${styles.term_plus} ${styles.decoration}`}>Достоинства</dt>
           <dd className={`${styles.item} ${styles.decoration}`}>мощность, внешний вид</dd>
-          <dt className={`${styles.term} ${styles.decoration}`}>Недостатки</dt>
+          <dt className={`${styles.term} ${styles.term_minus} ${styles.decoration}`}>Недостатки</dt>
           <dd className={`${styles.item} ${styles.decoration}`}>Слабые тормозные колодки (пришлось заменить)</dd>
           <dt className={styles.term}>Комментарий</dt>
           <dd className={styles.item}>Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.</dd>
@@ -38,9 +40,9 @@ function Comments({setView}) {
       <article className={styles.comment}>
         <p className={styles.user}>Марсель Исмагилов</p>
         <dl className={styles.list}>
-          <dt className={`${styles.term} ${styles.decoration}`}>Достоинства</dt>
+          <dt className={`${styles.term} ${styles.term_plus} ${styles.decoration}`}>Достоинства</dt>
           <dd className={`${styles.item} ${styles.decoration}`}>Cтиль, комфорт, управляемость</dd>
-          <dt className={`${styles.term} ${styles.decoration}`}>Недостатки</dt>
+          <dt className={`${styles.term} ${styles.term_minus} ${styles.decoration}`}>Недостатки</dt>
           <dd className={`${styles.item} ${styles.decoration}`}>Дорогой ремонт и обслуживание</dd>
           <dt className={styles.term}>Комментарий</dt>
           <dd className={styles.item}>Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.</dd>
@@ -56,6 +58,9 @@ function Comments({setView}) {
           <a href="#" className={styles.reply}>Ответить</a>
         </div>
       </article>
+      {newCommentary.name ? (<AddComment
+        commentary={newCommentary}
+      />) : ('')}
     </section>
   );
 }
