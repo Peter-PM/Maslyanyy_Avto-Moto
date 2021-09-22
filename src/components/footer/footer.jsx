@@ -11,8 +11,8 @@ function Footer() {
         <li className={styles.item}><a href="#">Аренда авто</a></li>
         <li className={styles.item}><a href="#">Каршерин</a>г</li>
         <li className={styles.item}><a href="#">Как продать авто</a></li>
-        <li className={styles.item}><a href="#">trade-in</a></li>
-        <li className={styles.item}><a href="#">test drive</a></li>
+        <li className={styles.item}><a href="#">Trade-in</a></li>
+        <li className={styles.item}><a href="#">Test drive</a></li>
       </ul>
     </footer>
   );

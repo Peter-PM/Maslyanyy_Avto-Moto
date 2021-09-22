@@ -13,3 +13,5 @@ export const FIRST_FOTO = 1;
 export const LAST_FOTO = 3;
 
 export const STARS = [5,4,3,2,1];
+
+export const MIN_STARS_FOR_RECOMENDATION = 4;

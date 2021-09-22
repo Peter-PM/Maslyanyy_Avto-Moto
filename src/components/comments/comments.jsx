@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './comments.module.scss';
 import Stars from '../stars/stars';
 import AddComment from '../add-comment/add-comment';
@@ -6,7 +7,7 @@ import AddComment from '../add-comment/add-comment';
 const RATING_STARS = 3;
 
 function Comments({setView, newCommentary}) {
-  newCommentary.name ? console.log(newCommentary): console.log('no comments') ;
+
   return (
     <section className={styles.comments}>
       <button
@@ -64,5 +65,23 @@ function Comments({setView, newCommentary}) {
     </section>
   );
 }
+
+Comments.propTypes = {
+  setView: PropTypes.func.isRequired,
+  newCommentary: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      advantages: PropTypes.string.isRequired,
+      limitations: PropTypes.string.isRequired,
+      comment: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      rating: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+    }),
+  ]).isRequired,
+};
 
 export default Comments;

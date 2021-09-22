@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './add-comment.module.scss';
 import Stars from '../stars/stars';
+import { MIN_STARS_FOR_RECOMENDATION } from '../../utils/constants';
 
 function AddComment({commentary}) {
 
@@ -35,7 +37,7 @@ function AddComment({commentary}) {
           <Stars
           star={commentary.rating}
           />
-          <span className={styles.recommendation}>{commentary.rating > 3 ? 'Советует' : ''}</span>
+          <span className={styles.recommendation}>{commentary.rating >= MIN_STARS_FOR_RECOMENDATION ? 'Советует' : ''}</span>
         </div>
         <div className={styles.feedback}>
           <span className={styles.time}>{commentary.date}</span>
@@ -44,5 +46,18 @@ function AddComment({commentary}) {
       </article>
   );
 }
+
+AddComment.propTypes = {
+  commentary: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    advantages: PropTypes.string,
+    limitations: PropTypes.string,
+    comment: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    rating: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number]),
+  }),
+};
   
-  export default AddComment;
+export default AddComment;

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import styles from './rating-star.module.scss';
 import { STARS } from '../../utils/constants';
 
@@ -29,5 +30,13 @@ function RatingStar({rating, setRating}) {
     </ul>
   );
 }
-  
-  export default RatingStar;
+
+RatingStar.propTypes = {
+  rating: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  setRating: PropTypes.func.isRequired,
+};
+
+export default RatingStar;

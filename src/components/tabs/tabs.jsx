@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './tabs.module.scss';
 import Details from '../details/details';
 import Comments from '../comments/comments';
@@ -54,5 +55,23 @@ function Tabs({setView, newCommentary}) {
     </section>
   );
 }
+
+Comments.propTypes = {
+  setView: PropTypes.func.isRequired,
+  newCommentary: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      advantages: PropTypes.string.isRequired,
+      limitations: PropTypes.string.isRequired,
+      comment: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      rating: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+    }),
+  ]).isRequired,
+};
 
 export default Tabs;

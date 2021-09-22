@@ -17,11 +17,12 @@ function Contacts() {
         </dd>
         <dt className={styles.term}>Телефон</dt>
         <dd className={styles.item}>
-          8 (800) 333-55-99
+        <a href="tel:88003335599">8 (800) 333-55-99</a>
         </dd>
         <dt className={styles.term}>E-mail</dt>
         <dd className={styles.item}>
-          info@avto-moto.ru
+        <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+          
         </dd>
       </dl>
       <div className={styles.map}>

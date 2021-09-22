@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import styles from './popup.module.scss';
 import RatingStar from '../review-star/rating-star';
@@ -191,5 +192,11 @@ function Popup({viewPopup, setView, setNewCommentary}) {
     </>
   );
 }
+
+Popup.propTypes = {
+  viewPopup: PropTypes.bool.isRequired,
+  setView: PropTypes.func.isRequired,
+  setNewCommentary: PropTypes.func.isRequired,
+};
 
 export default Popup;

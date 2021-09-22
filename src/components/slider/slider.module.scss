@@ -1,17 +1,41 @@
 .slider {
-  margin-left: 20px;
+  margin-left: 13px;
   margin-top: 90px;
 }
 
 .preview {
   display: flex;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 36px;
 }
 
-.mainImage {
+.main_image {
+  position: relative;
   max-width: 100%;
   height: auto;
+}
+
+.image_container {
+  position: relative;
+
+  &::before {
+    content: 'NEW MODEL';
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 122px;
+    height: 30px;
+    text-align: center;
+    background-color: #D12136;
+    color: #FFFFFF;
+    z-index: 2;
+  }
 }
 
 .images {
@@ -21,10 +45,15 @@
   width: 434px;
 }
 
+.active__images {
+  outline: 1px solid #D12136;
+}
+
 .button {
   padding: 16px 15px;
   border: 1px solid #D7D9DF;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .buttonLeft {

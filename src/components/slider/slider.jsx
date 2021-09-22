@@ -9,10 +9,16 @@ function Slider() {
 
   const [count, setCount] = useState(1);
 
+  const IMAGE_ACTIVE_NUMBERS = {
+    ONE: 1,
+    TWO: 2,
+    THREE: 3,
+  }
+
   return (
     <section className={styles.slider}>
-      <div>
-        <img className={styles.mainImage} src={`../image/desktop-slide-${count}.jpg`}alt="Внешний вид машины" width="600" height="375"/>
+      <div className={styles.image_container}>
+        <img className={styles.main_image} src={`../image/desktop-slide-${count}.png`} srcSet={`../image/desktop-slide-${count}-2x.png 2x`} alt="Внешний вид машины" width="600" height="375"/>
       </div>
       <div className={styles.preview}>
         <button
@@ -24,13 +30,13 @@ function Slider() {
         </button>
         <ul className={styles.images}>
           <li>
-            <img src="../image/desktop-slide-1-min.jpg" alt="Первая фотография" width="128" height="80"/>
+            <img className={`${count === IMAGE_ACTIVE_NUMBERS.ONE && styles.active__images}`} src="../image/desktop-slide-1-min.png" alt="Первая фотография" width="128" height="80"/>
           </li>
           <li>
-            <img src="../image/desktop-slide-2-min.jpg" alt="Вторая фотография" width="128" height="80"/>
+            <img className={`${count === IMAGE_ACTIVE_NUMBERS.TWO && styles.active__images}`} src="../image/desktop-slide-2-min.png" alt="Вторая фотография" width="128" height="80"/>
           </li>
           <li>
-            <img src="../image/desktop-slide-3-min.jpg" alt="Третья фотография" width="128" height="80"/>
+            <img className={`${count === IMAGE_ACTIVE_NUMBERS.THREE && styles.active__images}`} src="../image/desktop-slide-3-min.png" alt="Третья фотография" width="128" height="80"/>
           </li>
         </ul>
         <button
