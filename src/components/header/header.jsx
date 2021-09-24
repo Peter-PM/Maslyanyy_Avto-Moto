@@ -6,7 +6,9 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <Logo/>
+      <Logo
+        mainPage={true}
+      />
       <nav>
         <ul className={styles.list}>
           <li className={styles.item}><a className={styles.link} href="#">Автомобили</a></li>

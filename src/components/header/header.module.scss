@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   min-height: 64px;
   padding: 10px calc(50% - 605px);
   background-color: #F5F5F9;
@@ -10,7 +9,7 @@
 
 .list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
   margin-right: 20px;
 }

@@ -2,8 +2,16 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styles from './rating-star.module.scss';
 import { STARS } from '../../utils/constants';
+import { clickEnter } from '../../utils/constants';
 
 function RatingStar({rating, setRating}) {
+  
+  const handleRatingStarPressEnter = (evt, item) => {
+    if (clickEnter(evt)) {
+      evt.preventDefault();
+      setRating(item);
+    }
+  };
 
   return (
     <ul className={styles.list}>
@@ -22,6 +30,7 @@ function RatingStar({rating, setRating}) {
           className={styles.label}
           htmlFor={`star-${item}`}
           tabIndex="0"
+          onKeyPress={(evt) => handleRatingStarPressEnter(evt, item)}
         >
           Rating {item}
         </label>

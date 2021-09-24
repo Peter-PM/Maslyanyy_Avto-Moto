@@ -4,6 +4,7 @@ import styles from './tabs.module.scss';
 import Details from '../details/details';
 import Comments from '../comments/comments';
 import Contacts from '../contacts/contacts';
+import { clickEnter } from '../../utils/constants';
 
 const Tab = {
   DETAILS: 'Details',
@@ -24,28 +25,41 @@ function Tabs({setView, newCommentary}) {
         return <Contacts/>;
       default:
         return <Details/>;
-    }
-  }
+    };
+  };
 
   const [activeTab, setActiveTab] = useState(Tab.DETAILS);
+
+  const hangleTabPressEnter = (evt, tab) => {
+    if (clickEnter(evt)) {
+      evt.preventDefault();
+      setActiveTab(tab);
+    };
+  };
   
   return (
     <section className={styles.tabs}>
       <ul className={styles.list}>
         <li
           className={`${styles.item} ${activeTab === Tab.DETAILS && styles.itemActive}`}
+          tabIndex="0"
+          onKeyPress={(evt)=>{hangleTabPressEnter(evt, Tab.DETAILS)}}
           onClick={()=>{setActiveTab(Tab.DETAILS)}}
         >
           Характеристики
         </li>
         <li
           className={`${styles.item} ${activeTab === Tab.REVIEWS && styles.itemActive}`}
+          tabIndex="0"
+          onKeyPress={(evt)=>{hangleTabPressEnter(evt, Tab.REVIEWS)}}
           onClick={()=>{setActiveTab(Tab.REVIEWS)}}
          >
            Отзывы
         </li>
         <li
           className={`${styles.item} ${activeTab === Tab.CONTACTS && styles.itemActive}`}
+          tabIndex="0"
+          onKeyPress={(evt)=>{hangleTabPressEnter(evt, Tab.CONTACTS)}}
           onClick={()=>{setActiveTab(Tab.CONTACTS)}}
         >
           Контакты
