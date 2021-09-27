@@ -8,9 +8,8 @@
 }
 
 .list {
-  display: grid;
-  grid-template-columns: repeat(7, auto);
-  justify-content: space-between;
+  display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
   margin: 0 20px;
@@ -23,6 +22,11 @@
   color: #48494D;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 66px;
+
+  &:last-child {
+    padding-right: 0;
+  }
 
   &:hover {
     color: #000000;
